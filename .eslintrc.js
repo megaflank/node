@@ -12,9 +12,17 @@ module.exports = {
     //"prefer-const": "error",
     strict: "error",
   },
-  //   overrides: [
-  //     {
-  //       files: ["test/*.js"],
-  //     },
-  //   ],
+  overrides: [
+    {
+      files: ["lib/client/*.mjs"],
+      parserOptions: {
+        sourceType: "module",
+      },
+      env: {
+        node: false,
+        browser: true,
+        es6: true,
+      },
+    },
+  ],
 };
